@@ -1,0 +1,193 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --accent-color: #0066FF;
+  --text-color: #666666;
+  --text-color-dark: #000000;
+  --background-color: rgba(0, 0, 0, 0.9);
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --section-padding: 120px;
+  --max-width: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.9);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.9);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.content-container {
+  margin-top: 30px; /* Match the header height */
+  position: relative;
+  z-index: 1;
+}
+
+/* ... rest of the styles remain the same ... */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+@keyframes staticMove {
+  0% { 
+    background-position: 0 0, 2px 2px, 1px 1px;
+    opacity: 1;
+  }
+  20% { 
+    background-position: -1px 1px, 1px 3px, 0px 2px;
+    opacity: 0.9;
+  }
+  40% { 
+    background-position: 1px -1px, 3px 1px, 2px 0px;
+    opacity: 0.95;
+  }
+  60% { 
+    background-position: -1px -1px, 1px 1px, 0px 0px;
+    opacity: 0.85;
+  }
+  80% { 
+    background-position: 1px 1px, 3px 3px, 2px 2px;
+    opacity: 0.9;
+  }
+  100% { 
+    background-position: 0 0, 2px 2px, 1px 1px;
+    opacity: 1;
+  }
+}
+
+.sectionTitle {
+  font-family: 'Space Mono', 'Roboto Mono', monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  background-color: transparent;
+  font-size: 5.5rem;
+  font-weight: 400;
+  text-align: center;
+  background: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sectionTitle::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      white 0.5px,
+      transparent 0.5px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      black 0.5px,
+      transparent 0.5px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      #808080 0.5px,
+      transparent 0.5px
+    );
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px, 1px 1px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: staticMove 0.05s steps(1) infinite;
+  z-index: 1;
+}
+
+.sectionTitle::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(128, 128, 128, 0.8) 0.5px,
+      transparent 0.5px
+    );
+  background-size: 3px 3px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: staticMove 0.05s steps(1) infinite reverse;
+  animation-delay: -0.025s;
+  z-index: 2;
+}
+
+/* Add flicker animation */
+@keyframes flicker {
+  0% { opacity: 1; }
+  25% { opacity: 0.9; }
+  50% { opacity: 0.95; }
+  75% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+.sectionTitle {
+  animation: flicker 0.03s steps(1) infinite;
+}
+
+/* Add a fixed background layer */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: -1;
+}
+
+/* Ensure main content is above the fixed background */
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}

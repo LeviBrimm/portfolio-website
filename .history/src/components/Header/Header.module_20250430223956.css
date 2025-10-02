@@ -1,0 +1,102 @@
+.headerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+.header {
+  height: 30px;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.2rem;
+  padding-top: 2px;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 2px;
+}
+
+.navLink {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-top: 2px;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1;
+  font-family: 'Space Grotesk', sans-serif;
+  padding-top: 4px;
+}
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.navLink {
+  all: unset;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: 1;
+  font-family: var(--font-primary);
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cvButton {
+  all: unset;
+  color: #B80021;
+  cursor: pointer;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: var(--font-primary);
+  transition: color 0.3s ease;
+}
+
+.cvButton:hover {
+  color: #FF0030;
+}
+
+.navLink {
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
