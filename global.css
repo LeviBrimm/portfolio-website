@@ -1,0 +1,38 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: #0066FF;
+    --text-color: #666666;
+    --text-color-dark: #000000;
+    --background-color: #0a0a0a; /* Updated to very dark black */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-secondary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --section-padding: 120px;
+    --max-width: 1200px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: #0a0a0a; /* Explicitly set to very dark black */
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a0a; /* Updated to match */
+  }
